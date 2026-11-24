@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VaporChat</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="chat-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="VaporChat home"><span class="brand-mark">V</span> VaporChat</a>
+      <span class="room-label"><span class="live-dot"></span> PUBLIC ROOM</span>
+    </header>
+
+    <section class="chat-card" aria-label="Public chat">
+      <div class="room-heading">
+        <div>
+          <div class="eyebrow">WELCOME TO THE ROOM</div>
+          <h1>Say hello<span class="accent">.</span></h1>
+          <p>One room, open to everyone. Be kind.</p>
+        </div>
+        <div class="connection-state" id="connection-state"><span class="state-dot"></span> <span>Not connected</span></div>
+      </div>
+
+      <div class="messages" id="messages" aria-live="polite" aria-label="Chat messages">
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon">✳</span>
+          <p>Your conversation starts here.</p>
+          <span>Pick a nickname and join in.</span>
+        </div>
+      </div>
+
+      <form class="composer" id="message-form">
+        <label class="sr-only" for="message-input">Write a message</label>
+        <input id="message-input" name="message" maxlength="2000" placeholder="Write something nice..." autocomplete="off" disabled>
+        <button id="send-button" type="submit" disabled aria-label="Send message">↑</button>
+      </form>
+      <footer class="chat-footer"><span id="identity">Not connected</span><span>Messages expire automatically</span></footer>
+    </section>
+    <p class="page-note">A little corner of the internet, just for now.</p>
+  </main>
+  <script src="/chat.js"></script>
+</body>
+</html>
